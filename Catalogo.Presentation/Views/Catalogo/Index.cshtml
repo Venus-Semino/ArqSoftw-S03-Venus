@@ -1,0 +1,36 @@
+﻿@model List<CatalogoApp.Domain.Models.Item>
+
+@{
+    ViewData["Title"] = "Catálogo";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-5 fw-bold" style="text-shadow: 0 0 15px rgba(255,255,255,0.2);">Mi Catálogo</h1>
+        <a asp-action="Agregar" class="btn btn-outline-light">+ Agregar Película</a>
+    </div>
+
+    <div class="genre-filter mb-4">
+        <a asp-action="Index" class="badge rounded-pill bg-primary text-decoration-none" style="background-color: #89b4fa !important; color: #1e1e2e;">Todos</a>
+        @foreach (var gen in (ViewBag.Generos as List<string> ?? new List<string>()))
+        {
+            <span class="text-muted mx-1">|</span>
+            <a asp-action="Index" asp-route-genero="@gen" class="badge rounded-pill bg-dark text-decoration-none border border-secondary" style="color: #cdd6f4;">@gen</a>
+        }
+    </div>
+
+    <hr class="border-secondary mb-5" />
+
+    <div class="movie-grid">
+        @foreach (var item in Model)
+        {
+            <div class="movie-card" onclick="location.href='@Url.Action("Detalle", new { id = item.Id })'">
+                <div class="movie-info">
+                    <h3 class="movie-title mb-2">@item.Titulo</h3>
+                    <p class="movie-meta mb-0" style="color: #89b4fa;">@item.Genero</p>
+                    <p class="movie-meta text-muted" style="font-size: 0.8rem;">Año: @item.Ano</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
