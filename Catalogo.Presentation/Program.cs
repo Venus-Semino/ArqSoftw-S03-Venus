@@ -13,6 +13,10 @@ builder.Services.AddSingleton<IItemRepository>(new JsonItemRepository(jsonPath))
 
 // Registrar el servicio de Applicationbuilder.Services.AddScoped<ItemService>();
 builder.Services.AddScoped<ItemService>();
+
+builder.Services.AddControllersWithViews(); 
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
