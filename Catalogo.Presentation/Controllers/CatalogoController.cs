@@ -58,14 +58,14 @@ namespace CatalogoApp.Presentation.Controllers
         [HttpPost]
         public IActionResult Calificar(int id, int calificacion)
         {
-            var pelicula = _itemService.ObtenerPorId(id);
+            // Cambia _itemService por el nombre de tu variable del servicio (ej. _service)
+            var pelicula = _service.ObtenerPorId(id);
             if (pelicula != null)
             {
                 pelicula.Calificacion = calificacion;
-                _itemService.Actualizar(pelicula);
+                _service.Actualizar(pelicula);
             }
 
-            // Recarga la misma página de detalles para ver la calificación actualizada
             return RedirectToAction("Detalle", new { id = id });
         }
     }
