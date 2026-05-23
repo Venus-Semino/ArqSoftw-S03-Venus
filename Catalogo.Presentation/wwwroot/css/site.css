@@ -1,31 +1,57 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Estilo Personalizado - Dark/Modern Theme */
 body {
-  margin-bottom: 60px;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* Sobrescribir barra de navegación */
+.navbar {
+    background-color: #1e1e2e !important;
+    border-bottom: 2px solid #89b4fa !important;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.navbar-brand, .nav-link {
+    color: #cdd6f4 !important;
 }
+
+    .nav-link:hover {
+        color: #89b4fa !important;
+        transition: 0.3s ease-in-out;
+    }
+
+/* Tarjetas y contenedores de formularios */
+.form-container {
+    background-color: #1e1e2e;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    border: 1px solid #313244;
+}
+
+/* Inputs adaptados al modo oscuro */
+.form-floating > .form-control {
+    background-color: #313244;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+}
+
+.form-floating > label {
+    color: #a6adc8;
+}
+
+/* Botón personalizado con acento vibrante */
+.custom-btn {
+    background-color: #89b4fa;
+    color: #11111b;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+    .custom-btn:hover {
+        background-color: #b4befe;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(137, 180, 250, 0.4);
+    }

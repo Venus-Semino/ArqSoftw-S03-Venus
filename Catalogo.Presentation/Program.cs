@@ -11,6 +11,10 @@ var jsonPath = Path.Combine(builder.Environment.ContentRootPath, "data", "items.
 
 builder.Services.AddSingleton<IItemRepository>(new JsonItemRepository(jsonPath));
 
+// Ruta para la base de datos de usuarios JSON
+var usersJsonPath = Path.Combine(builder.Environment.ContentRootPath, "data", "usuarios.json");
+builder.Services.AddSingleton<IUsuarioRepository>(new JsonUsuarioRepository(usersJsonPath));
+
 // Registrar el servicio de Applicationbuilder.Services.AddScoped<ItemService>();
 builder.Services.AddScoped<ItemService>();
 
