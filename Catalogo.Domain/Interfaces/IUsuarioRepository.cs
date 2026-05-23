@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json;
-using Catalogo.Domain.Models;
+﻿using Catalogo.Domain.Models;
 using CatalogoApp.Domain.Models;
 
 namespace CatalogoApp.Domain.Interfaces

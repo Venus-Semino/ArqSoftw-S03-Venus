@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using CatalogoApp.Domain.Interfaces;
 using CatalogoApp.Domain.Models;
 
@@ -10,8 +10,6 @@ namespace CatalogoApp.Application.Services
     {
         private readonly IItemRepository _repo;
 
-        // El servicio recibe el repositorio por constructor
-        // No sabe si es JSON, SQL, memoria, etc.
         public ItemService(IItemRepository repo)
         {
             _repo = repo;
@@ -29,8 +27,6 @@ namespace CatalogoApp.Application.Services
 
         public void Agregar(Item item)
         {
-            // Aquí podrías agregar validaciones de negocio
-            // Por ejemplo: if (string.IsNullOrEmpty(item.Titulo)) throw...
             _repo.Agregar(item);
         }
 
@@ -39,7 +35,12 @@ namespace CatalogoApp.Application.Services
             _repo.Eliminar(id);
         }
 
-        // Método útil para el filtro por categoría/género
+        // Método para actualizar un ítem (como la calificación)
+        public void Actualizar(Item item)
+        {
+            _repo.Actualizar(item);
+        }
+
         public List<Item> ObtenerPorGenero(string genero)
         {
             return _repo.ObtenerTodos()
@@ -53,11 +54,6 @@ namespace CatalogoApp.Application.Services
                         .Select(i => i.Genero)
                         .Distinct()
                         .ToList();
-        }
-
-        public void Actualizar(Item item)
-        {
-            _repository.Actualizar(item);
         }
     }
 }

@@ -1,7 +1,6 @@
-﻿namespace Catalogo.Presentation.Controllers
+﻿using Catalogo.Domain.Models;
 using CatalogoApp.Domain.Interfaces;
 using CatalogoApp.Domain.Models;
-using global::CatalogoApp.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CatalogoApp.Presentation.Controllers
@@ -32,10 +31,5 @@ namespace CatalogoApp.Presentation.Controllers
             }
             return View(usuario);
         }
-    }
-}
-{
-    public class CuentaController
-    {
     }
 }

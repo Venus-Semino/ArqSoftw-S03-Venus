@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
+using System.Linq;
 using System.Text.Json;
-using Catalogo.Domain.Interfaces;
+using Catalogo.Domain.Models;
 using CatalogoApp.Domain.Interfaces;
 using CatalogoApp.Domain.Models;
 
