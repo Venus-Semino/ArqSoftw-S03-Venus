@@ -3,8 +3,18 @@
     "Id": 1,
     "Titulo": "Devil May Cry",
     "Genero": "Hack and Slash",
-    "Consola": "PlayStation 2",
+    "Plataforma": "",
     "Ano": 2001,
-    "Descripcion": "Dante, cazador de demonios, enfrenta a Mundus."
+    "Descripcion": "Dante, cazador de demonios, enfrenta a Mundus.",
+    "Calificacion": 0
+  },
+  {
+    "Id": 2,
+    "Titulo": "el libro de la selva",
+    "Genero": "animacion",
+    "Plataforma": "Disney",
+    "Ano": 1967,
+    "Descripcion": "es una pelicula sobre un ni\u00F1o que vivi\u00F3 su infancia en la sela junto a los lobos",
+    "Calificacion": 2
   }
 ]

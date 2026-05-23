@@ -20,20 +20,23 @@ namespace CatalogoApp.Presentation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Registro(Usuario usuario)
+        public IActionResult Registro(string email, string password)
         {
-            // Forzamos la remoción del ID del estado de validación
-            ModelState.Remove("Id");
-
-            if (ModelState.IsValid)
+            // Validación manual súper sencilla e infalible
+            if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
-                _usuarioRepo.Registrar(usuario);
-                // Al registrar con éxito, te manda directo al catálogo
+                var nuevoUsuario = new Usuario
+                {
+                    Email = email,
+                    Password = password
+                };
+
+                _usuarioRepo.Registrar(nuevoUsuario);
                 return RedirectToAction("Index", "Catalogo");
             }
 
-            // Si llega aquí, el asp-validation-summary te dirá exactamente qué campo falló
-            return View(usuario);
+            ViewBag.Error = "Por favor llena todos los campos.";
+            return View();
         }
 
         [HttpGet]

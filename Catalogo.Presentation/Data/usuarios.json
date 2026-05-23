@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "Email": "venus.semino@gmail.com",
+    "Password": "hiiii"
+  },
+  {
+    "Id": 2,
+    "Email": "venus.semino@tecdesoftware.edu.mx",
+    "Password": "hola"
+  },
+  {
+    "Id": 3,
+    "Email": "yoyo@gmail.com",
+    "Password": "michi"
+  }
+]
