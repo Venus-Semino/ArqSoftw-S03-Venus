@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using Catalogo.Domain.Models;
 using CatalogoApp.Domain.Interfaces;
 using CatalogoApp.Domain.Models;
 
@@ -29,6 +28,13 @@ namespace CatalogoApp.Infrastructure.Repositories
 
             var json = JsonSerializer.Serialize(usuarios, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(_filePath, json);
+        }
+
+        // Nueva lógica: Busca si existe un usuario con esas credenciales
+        public Usuario ObtenerPorEmailYPassword(string email, string password)
+        {
+            var usuarios = ObtenerTodos();
+            return usuarios.FirstOrDefault(u => u.Email == email && u.Password == password);
         }
 
         private List<Usuario> ObtenerTodos()
