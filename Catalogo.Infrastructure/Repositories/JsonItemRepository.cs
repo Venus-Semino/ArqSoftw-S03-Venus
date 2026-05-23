@@ -75,5 +75,17 @@ namespace CatalogoApp.Infrastructure.Repositories
             var json = JsonSerializer.Serialize(items, opciones);
             File.WriteAllText(_filePath, json);
         }
+
+        public void Actualizar(Item itemActualizado)
+        {
+            var items = ObtenerTodos();
+            var index = items.FindIndex(i => i.Id == itemActualizado.Id);
+
+            if (index != -1)
+            {
+                items[index] = itemActualizado;
+                Guardar(items); // Reutiliza el método Guardar que ya tienes
+            }
+        }
     }
 }

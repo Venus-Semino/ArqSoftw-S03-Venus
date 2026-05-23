@@ -6,3 +6,21 @@
 <p><strong>Descripción:</strong> @Model.Descripcion</p>
 <hr />
 <a asp-action="Index">&larr; Volver al Catálogo</a>
+<div class="mt-4 p-3 rounded" style="background-color: #1e1e2e; border: 1px solid #313244;">
+    <h5 style="color: #cdd6f4;">Calificación Actual: <strong class="text-warning">@(Model.Calificacion == 0 ? "Sin calificar" : Model.Calificacion + " / 5")</strong></h5>
+
+    <form asp-action="Calificar" method="post" class="d-flex align-items-center gap-3 mt-3">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <select name="calificacion" class="form-select w-auto" style="background-color: #313244; color: #cdd6f4; border: 1px solid #45475a;">
+            <option value="1">1 - Muy Mala</option>
+            <option value="2">2 - Mala</option>
+            <option value="3">3 - Regular</option>
+            <option value="4">4 - Buena</option>
+            <option value="5">5 - Excelente</option>
+        </select>
+        <button type="submit" class="btn custom-btn">Guardar Calificación</button>
+    </form>
+</div>
+<div class="mt-4">
+    <a asp-action="Index" class="btn btn-secondary">Regresar al Catálogo</a>
+</div>

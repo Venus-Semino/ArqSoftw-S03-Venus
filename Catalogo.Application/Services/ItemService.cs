@@ -54,5 +54,10 @@ namespace CatalogoApp.Application.Services
                         .Distinct()
                         .ToList();
         }
+
+        public void Actualizar(Item item)
+        {
+            _repository.Actualizar(item);
+        }
     }
 }

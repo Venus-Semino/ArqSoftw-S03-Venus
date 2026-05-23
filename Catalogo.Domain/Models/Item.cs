@@ -12,5 +12,6 @@ namespace CatalogoApp.Domain.Models
         public string Plataforma { get; set; } = string.Empty;
         public int Ano { get; set; }
         public string Descripcion { get; set; } = string.Empty;
+        public int Calificacion { get; set; }
     }
 }

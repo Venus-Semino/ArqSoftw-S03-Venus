@@ -54,5 +54,19 @@ namespace CatalogoApp.Presentation.Controllers
             _service.Eliminar(id);
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult Calificar(int id, int calificacion)
+        {
+            var pelicula = _itemService.ObtenerPorId(id);
+            if (pelicula != null)
+            {
+                pelicula.Calificacion = calificacion;
+                _itemService.Actualizar(pelicula);
+            }
+
+            // Recarga la misma página de detalles para ver la calificación actualizada
+            return RedirectToAction("Detalle", new { id = id });
+        }
     }
 }
