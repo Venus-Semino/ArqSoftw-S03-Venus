@@ -8,42 +8,40 @@
     "Descripcion": "es una pelicula sobre un ni\u00F1o que vivi\u00F3 su infancia en la sela junto a los lobos",
     "Calificacion": 3
   },
-
   {
     "Id": 3,
     "Titulo": "La princesa y el sapo",
-    "Genero": "Animación",
-    "Plataforma": "Disney+",
+    "Genero": "Animaci\u00F3n",
+    "Plataforma": "Disney\u002B",
     "Ano": 2009,
-    "Descripcion": "Una joven mesera llamada Tiana se embarca en una aventura mágica por los pantanos de Luisiana después de besar a un príncipe convertido en sapo.",
-    "Calificacion": 0
+    "Descripcion": "Una joven mesera llamada Tiana se embarca en una aventura m\u00E1gica por los pantanos de Luisiana despu\u00E9s de besar a un pr\u00EDncipe convertido en sapo.",
+    "Calificacion": 5
   },
   {
     "Id": 4,
-    "Titulo": "Crepúsculo",
-    "Genero": "Romance / Fantasía",
+    "Titulo": "Crep\u00FAsculo",
+    "Genero": "Romance / Fantas\u00EDa",
     "Plataforma": "Amazon Prime Video",
     "Ano": 2008,
-    "Descripcion": "Bella Swan se muda a Forks y se enamora de Edward Cullen, un misterioso compañero de clase que resulta ser un vampiro.",
-    "Calificacion": 0
+    "Descripcion": "Bella Swan se muda a Forks y se enamora de Edward Cullen, un misterioso compa\u00F1ero de clase que resulta ser un vampiro.",
+    "Calificacion": 5
   },
   {
     "Id": 5,
     "Titulo": "Spider-Man: Un nuevo universo",
-    "Genero": "Animación / Acción",
-    "Plataforma": "Disney+",
+    "Genero": "Animaci\u00F3n / Acci\u00F3n",
+    "Plataforma": "Disney\u002B",
     "Ano": 2018,
-    "Descripcion": "El adolescente Miles Morales se convierte en el nuevo Spider-Man de su universo y debe unirse a versiones alternativas del héroe para detener una amenaza que altera la realidad.",
+    "Descripcion": "El adolescente Miles Morales se convierte en el nuevo Spider-Man de su universo y debe unirse a versiones alternativas del h\u00E9roe para detener una amenaza que altera la realidad.",
     "Calificacion": 0
   },
   {
     "Id": 6,
     "Titulo": "The Batman",
-    "Genero": "Acción / Misterio",
+    "Genero": "Acci\u00F3n / Misterio",
     "Plataforma": "HBO Max",
     "Ano": 2022,
-    "Descripcion": "En su segundo año luchando contra el crimen, Batman investiga la corrupción oculta de Gotham y cuestiona el legado de su propia familia mientras persigue a El Acertijo.",
+    "Descripcion": "En su segundo a\u00F1o luchando contra el crimen, Batman investiga la corrupci\u00F3n oculta de Gotham y cuestiona el legado de su propia familia mientras persigue a El Acertijo.",
     "Calificacion": 0
   }
-
 ]
