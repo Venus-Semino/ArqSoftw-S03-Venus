@@ -4,21 +4,18 @@ using CatalogoApp.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Ruta del archivo JSON — se guarda en la carpeta "data" del proyectovar jsonPath = Path.Combine(
-
+// 1. Ruta y registro para la base de datos de películas (Catálogo)
 var jsonPath = Path.Combine(builder.Environment.ContentRootPath, "data", "items.json");
-// Registrar el repositorio JSON como implementación de IItemRepositorybuilder.Services.AddSingleton<IItemRepository>(
-
 builder.Services.AddSingleton<IItemRepository>(new JsonItemRepository(jsonPath));
 
-// Ruta para la base de datos de usuarios JSON
+// 2. Ruta y registro para la base de datos de usuarios
 var usersJsonPath = Path.Combine(builder.Environment.ContentRootPath, "data", "usuarios.json");
 builder.Services.AddSingleton<IUsuarioRepository>(new JsonUsuarioRepository(usersJsonPath));
 
-// Registrar el servicio de Applicationbuilder.Services.AddScoped<ItemService>();
+// 3. Registrar el servicio de la capa de Aplicación
 builder.Services.AddScoped<ItemService>();
 
-builder.Services.AddControllersWithViews(); 
+builder.Services.AddControllersWithViews();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();

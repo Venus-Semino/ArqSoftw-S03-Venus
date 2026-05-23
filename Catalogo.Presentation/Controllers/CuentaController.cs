@@ -22,18 +22,19 @@ namespace CatalogoApp.Presentation.Controllers
         [HttpPost]
         public IActionResult Registro(Usuario usuario)
         {
-            // Le decimos a ASP.NET que ignore el Id porque nosotros lo generamos
+            // Forzamos la remoción del ID del estado de validación
             ModelState.Remove("Id");
 
             if (ModelState.IsValid)
             {
                 _usuarioRepo.Registrar(usuario);
+                // Al registrar con éxito, te manda directo al catálogo
                 return RedirectToAction("Index", "Catalogo");
             }
+
+            // Si llega aquí, el asp-validation-summary te dirá exactamente qué campo falló
             return View(usuario);
         }
-
-        // --- NUEVAS ACCIONES PARA EL INICIO DE SESIÓN ---
 
         [HttpGet]
         public IActionResult Login()
@@ -48,11 +49,9 @@ namespace CatalogoApp.Presentation.Controllers
 
             if (usuario != null)
             {
-                // Si lo encuentra en el .json, lo deja pasar al catálogo
                 return RedirectToAction("Index", "Catalogo");
             }
 
-            // Si se equivoca, le mostramos un error
             ViewBag.Error = "Correo o contraseña incorrectos.";
             return View();
         }
