@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mt-5 p-5 rounded form-container">
+    <h1 class="display-4 fw-bold" style="color: #89b4fa;">Bienvenido a VeryLike 🎬</h1>
+    <p class="lead mt-3 text-muted">Tu rincón personal para la organización, seguimiento y calificación de tus películas favoritas.</p>
+
+    <hr class="my-4" style="border-color: #313244;">
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <p class="text-secondary">
+                Explora nuestro catálogo completo de títulos cinematográficos, añade nuevas películas, administra la lista general de contenidos y guarda de forma persistente tus opiniones mediante un sistema dinámico estructurado en archivos locales JSON.
+            </p>
+            <a asp-controller="Catalogo" asp-action="Index" class="btn custom-btn btn-lg mt-3 px-4">Ir al Catálogo de Películas</a>
+        </div>
+    </div>
 </div>

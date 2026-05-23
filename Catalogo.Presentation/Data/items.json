@@ -1,20 +1,49 @@
 [
   {
-    "Id": 1,
-    "Titulo": "Devil May Cry",
-    "Genero": "Hack and Slash",
-    "Plataforma": "",
-    "Ano": 2001,
-    "Descripcion": "Dante, cazador de demonios, enfrenta a Mundus.",
-    "Calificacion": 0
-  },
-  {
     "Id": 2,
     "Titulo": "el libro de la selva",
     "Genero": "animacion",
     "Plataforma": "Disney",
     "Ano": 1967,
     "Descripcion": "es una pelicula sobre un ni\u00F1o que vivi\u00F3 su infancia en la sela junto a los lobos",
-    "Calificacion": 2
+    "Calificacion": 3
+  },
+
+  {
+    "Id": 3,
+    "Titulo": "La princesa y el sapo",
+    "Genero": "Animación",
+    "Plataforma": "Disney+",
+    "Ano": 2009,
+    "Descripcion": "Una joven mesera llamada Tiana se embarca en una aventura mágica por los pantanos de Luisiana después de besar a un príncipe convertido en sapo.",
+    "Calificacion": 0
+  },
+  {
+    "Id": 4,
+    "Titulo": "Crepúsculo",
+    "Genero": "Romance / Fantasía",
+    "Plataforma": "Amazon Prime Video",
+    "Ano": 2008,
+    "Descripcion": "Bella Swan se muda a Forks y se enamora de Edward Cullen, un misterioso compañero de clase que resulta ser un vampiro.",
+    "Calificacion": 0
+  },
+  {
+    "Id": 5,
+    "Titulo": "Spider-Man: Un nuevo universo",
+    "Genero": "Animación / Acción",
+    "Plataforma": "Disney+",
+    "Ano": 2018,
+    "Descripcion": "El adolescente Miles Morales se convierte en el nuevo Spider-Man de su universo y debe unirse a versiones alternativas del héroe para detener una amenaza que altera la realidad.",
+    "Calificacion": 0
+  },
+  {
+    "Id": 6,
+    "Titulo": "The Batman",
+    "Genero": "Acción / Misterio",
+    "Plataforma": "HBO Max",
+    "Ano": 2022,
+    "Descripcion": "En su segundo año luchando contra el crimen, Batman investiga la corrupción oculta de Gotham y cuestiona el legado de su propia familia mientras persigue a El Acertijo.",
+    "Calificacion": 0
   }
+
 ]

@@ -1,54 +1,29 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - VeryLike</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark mb-3" style="background-color: #1e1e2e; border-bottom: 2px solid #89b4fa;">
-            <div class="container-fluid">
-                <a class="navbar-brand text-light fw-bold" asp-area="" asp-controller="Home" asp-action="Index">VeryLike</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Catalogo" asp-action="Index">Catálogo</a>
-                        </li>
-                        <li class="nav-item ms-auto">
-                            <a class="nav-link fw-bold" style="color: #89b4fa !important;" asp-area="" asp-controller="Cuenta" asp-action="Login">Iniciar Sesión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Cuenta" asp-action="Registro">Registrarse</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+﻿<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Catalogo" asp-action="Index">Catálogo</a>
+        </li>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - VeryLike - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>
+        @if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+            <li class="nav-item ms-auto">
+                <span class="nav-link text-muted me-2">👤 @User.Identity.Name</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-danger fw-bold" asp-area="" asp-controller="Cuenta" asp-action="Logout">Cerrar Sesión</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item ms-auto">
+                <a class="nav-link fw-bold" style="color: #89b4fa !important;" asp-area="" asp-controller="Cuenta" asp-action="Login">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Cuenta" asp-action="Registro">Registrarse</a>
+            </li>
+        }
+    </ul>
+</div>

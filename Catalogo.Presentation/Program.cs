@@ -1,36 +1,44 @@
 using CatalogoApp.Application.Services;
 using CatalogoApp.Domain.Interfaces;
 using CatalogoApp.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies; // <-- Asegúrate de tener este using
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Ruta y registro para la base de datos de películas (Catálogo)
+// 1. Registro de Repositorios y Servicios
 var jsonPath = Path.Combine(builder.Environment.ContentRootPath, "data", "items.json");
 builder.Services.AddSingleton<IItemRepository>(new JsonItemRepository(jsonPath));
 
-// 2. Ruta y registro para la base de datos de usuarios
 var usersJsonPath = Path.Combine(builder.Environment.ContentRootPath, "data", "usuarios.json");
 builder.Services.AddSingleton<IUsuarioRepository>(new JsonUsuarioRepository(usersJsonPath));
 
-// 3. Registrar el servicio de la capa de Aplicación
 builder.Services.AddScoped<ItemService>();
-
 builder.Services.AddControllersWithViews();
+
+// 2. Configurar la autenticación nativa por Cookies
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Cuenta/Login"; // Ruta de redirección por defecto
+    });
+
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+// IMPORTANTE: UseAuthentication siempre debe ir antes de UseAuthorization
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapStaticAssets();
 
 app.MapControllerRoute(

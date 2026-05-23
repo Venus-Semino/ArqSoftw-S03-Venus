@@ -84,7 +84,7 @@ namespace CatalogoApp.Infrastructure.Repositories
             if (index != -1)
             {
                 items[index] = itemActualizado;
-                Guardar(items); // Reutiliza el método Guardar que ya tienes
+                Guardar(items); 
             }
         }
     }
