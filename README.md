@@ -32,32 +32,26 @@ El proyecto está estructurado en cuatro capas principales para mantener un cód
 
 ## 📸 Capturas de Pantalla
 
-*(Nota para la entrega: Coloca tus imágenes en la misma carpeta que este README o en una carpeta de imágenes y reemplaza la ruta entre paréntesis)*
 
 ### 1. Menú Principal y Navegación
-> Vista del tema oscuro personalizado y la barra de navegación.
 
-![Menú Principal](\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113536.png)
+![Menú Principal](<C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113536.png>)
 
 ### 2. Inicio de Sesión
-> Vista del formulario para ingresar las credenciales del usuario.
 
-![Inicio de Sesión]("C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113736.png")
+![Inicio de Sesión](<C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113736.png>)
 
 ### 3. Registro de Usuario
-> Formulario que guarda la información en `usuarios.json`.
 
-![Registro de Usuario](\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113549.png)
+![Registro de Usuario](<C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113549.png>)
 
 ### 4. Catálogo de Películas
-> Vista general de los ítems disponibles en la plataforma.
 
-![Catálogo de Películas](C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113837.png)
+![Catálogo de Películas](<C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113837.png>)
 
 ### 5. Detalles y Sistema de Calificación
-> Vista individual de la película, mostrando su información y el selector para calificarla.
 
-![Detalles y Calificación]("C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113855.png")
+![Detalles y Calificación](<C:\Users\venus\OneDrive\Imágenes\Screenshots\Captura de pantalla 2026-05-23 113855.png>)
 
 ---
 
